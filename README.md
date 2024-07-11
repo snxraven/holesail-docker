@@ -14,6 +14,8 @@ services:
     container_name: holesail
     restart: unless-stopped
     build: .
+    ports:
+      - 25565:8989
     environment:
       MODE: server      # defaults to client
       PORT: 25565

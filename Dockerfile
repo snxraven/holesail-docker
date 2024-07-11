@@ -2,10 +2,10 @@ FROM node:lts-slim as base
 
 RUN npm i holesail -g
 
-#ENV PORT 25565
 ENV MODE client
 ENV HOST 0.0.0.0
-#ENV CONNECTOR=$CONNECTOR
+
+EXPOSE 8989
 
 ENTRYPOINT sh -c ' \
     if [ "$MODE" = "server" ]; then \
