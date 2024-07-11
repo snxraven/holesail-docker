@@ -1,5 +1,10 @@
 Holesail-docker proxies traffic from another container.
 
+Clone this repo then from within the directory run: 
+```
+docker compose up --build
+```
+
 The easiest way to do this is to create a network in Docker:
 ```
 docker network create proxy
