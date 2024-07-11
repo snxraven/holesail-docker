@@ -19,8 +19,6 @@ services:
     container_name: holesail
     restart: unless-stopped
     build: .
-    ports:
-      - 25565:25565
     environment:
       MODE: server      # defaults to client
       PORT: 25565
@@ -51,3 +49,22 @@ networks:
   proxy:
     external: true 
 ```
+
+
+Client mode is untested!
+
+```
+services:
+  holesail:
+    container_name: holesail
+    restart: unless-stopped
+    network_mode: "host"           # host mode is required
+    build: .
+    environment:
+      MODE: client                 # defaults to client
+      PORT: 8989
+      HOST: 0.0.0.0                # defaults to 0.0.0.0
+      CONNECTOR: very-super-secret # leave this blank to generate a random secret.
+```
+
+"host" network mode only works with linux. Windows and Mac are incompatible.

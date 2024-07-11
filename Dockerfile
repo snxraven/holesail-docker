@@ -1,4 +1,4 @@
-FROM node:lts-slim as base
+FROM node:lts-slim AS base
 
 RUN npm i holesail -g
 
@@ -6,7 +6,7 @@ ENV MODE client
 ENV HOST 0.0.0.0
 ENV PORT 8989
 
-EXPOSE $PORT
+EXPOSE 8989
 
 ENTRYPOINT sh -c ' \
     if [ "$MODE" = "server" ]; then \
