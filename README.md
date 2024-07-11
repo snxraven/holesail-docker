@@ -20,7 +20,7 @@ services:
     restart: unless-stopped
     build: .
     ports:
-      - 25565:8989
+      - 25565:25565
     environment:
       MODE: server      # defaults to client
       PORT: 25565

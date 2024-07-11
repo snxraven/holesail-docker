@@ -4,8 +4,9 @@ RUN npm i holesail -g
 
 ENV MODE client
 ENV HOST 0.0.0.0
+ENV PORT 8989
 
-EXPOSE 8989
+EXPOSE $PORT
 
 ENTRYPOINT sh -c ' \
     if [ "$MODE" = "server" ]; then \
