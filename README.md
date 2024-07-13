@@ -20,10 +20,10 @@ services:
     restart: unless-stopped
     build: .
     environment:
-      MODE: server      # defaults to client
+      MODE: server                      # defaults to client
       PORT: 25565
-      HOST: minecraft   # defaults to 0.0.0.0
-      CONNECTOR: very-super-secret # leave this blank to generate a random secret.
+      HOST: minecraft                   # defaults to 0.0.0.0
+      CONNECTOR: very-super-secret      # leave this blank to generate a random secret.
     networks:
       - proxy
 
@@ -38,7 +38,6 @@ services:
     environment:
       EULA: "TRUE"
     volumes:
-      # attach the relative directory 'data' to the container's /data path
       - ./data:/data
     depends_on:
       - holesail
@@ -58,13 +57,32 @@ services:
   holesail:
     container_name: holesail
     restart: unless-stopped
-    network_mode: "host"           # host mode is required
+    network_mode: "host"                # host mode is required
     build: .
     environment:
-      MODE: client                 # defaults to client
+      MODE: client                      # defaults to client
       PORT: 8989
-      HOST: 0.0.0.0                # defaults to 0.0.0.0
-      CONNECTOR: very-super-secret # leave this blank to generate a random secret.
+      HOST: 0.0.0.0                     # defaults to 0.0.0.0
+      CONNECTOR: very-super-secret      # leave this blank to generate a random secret.
 ```
 
 "host" network mode only works with linux. Windows and Mac are incompatible.
+
+```
+services:
+  holesail:
+    container_name: holesail
+    restart: unless-stopped
+    build: .
+    environment:
+      MODE: filemanager                 # defaults to client
+      PORT: 8989 
+      HOST: 0.0.0.0                     # defaults to 0.0.0.0
+      PUBLIC: true                      # Defaults to true
+      ROLE: user                        # admin for write priveleges. 
+      USERNAME: admin
+      PASSWORD: admin
+      CONNECTOR: very-super-secret      # leave this blank to generate a random secret.
+    volumes:
+      - <host dir>:/data                # Change <host dir> to the directory you wish to share.
+```
