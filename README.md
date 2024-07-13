@@ -1,4 +1,8 @@
-Holesail-docker proxies traffic from another container.
+# Holesail-docker
+
+> ⚠️ **Warning!** Some of these features are untested.
+
+Holesail-docker proxies traffic from or to other containers.
 
 Clone this repo then from within the directory run: 
 ```
@@ -9,6 +13,7 @@ The easiest way to do this is to create a network in Docker:
 ```
 docker network create proxy
 ```
+## Server mode
 
 You can then use the contaier name and port of the container you want to proxy, as exampled below.
 
@@ -49,6 +54,7 @@ networks:
     external: true 
 ```
 
+## Client Mode
 
 Client mode is untested!
 
@@ -67,6 +73,8 @@ services:
 ```
 
 "host" network mode only works with linux. Windows and Mac are incompatible.
+
+## Filemanager Mode
 
 ```
 services:
