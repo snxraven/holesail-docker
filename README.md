@@ -127,7 +127,44 @@ Replace `<host dir>` with the directory you wish to share.
 
 ---
 
-To develop Holesail-docker, clone this repository and run:
+To develop Holesail-docker, clone this repository, create docker-compose.yml and run:
+
+```yaml
+services:
+  holesail:
+    container_name: holesail
+    restart: unless-stopped
+    build: .
+    environment:
+      MODE: server
+      PORT: 25565
+      HOST: minecraft
+      PUBLIC: false
+      CONNECTOR: very-super-secret
+    networks:
+      - holesail
+
+  mc:
+    image: itzg/minecraft-server
+    container_name: minecraft
+    tty: true
+    stdin_open: true
+    restart: unless-stopped
+    ports:
+      - "25565:25565"
+    environment:
+      EULA: "TRUE"
+    volumes:
+      - ./data:/data
+    depends_on:
+      - holesail
+    networks:
+      - holesail
+
+networks:
+  holesail:
+    external: true
+```
 
 ```bash
 docker compose up --build
