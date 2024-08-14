@@ -4,6 +4,24 @@
 
 Holesail-docker is a Docker container that proxies traffic from or to other containers.
 
+Environment Variables
+
+The container uses several environment variables to customize its behavior. These variables can be set when running the container using the -e flag.
+
+## Available Environment Variables
+
+The following environment variables are available:
+
+- MODE: The mode in which the container should run. Can be one of client, server, or filemanager.
+- PORT: The port number to use for the client or server mode.
+- HOST: The hostname or IP address to use for the client or server mode.
+- PUBLIC: A boolean value indicating whether the server should use a public connetor string. Only applicable in server mode.
+- FORCE: A boolean value indicating whether to force a short connector string of less than 32 chars. Only applicable in server and filemanager modes.
+- CONNECTOR: A connector string used to identify the connection. Can be used in client, server, and filemanager modes.
+- USERNAME: The username to use for authentication in filemanager mode.
+- PASSWORD: The password to use for authentication in filemanager mode.
+- ROLE: The role to assign to the user in filemanager mode. Can be either admin or user.
+
 ## Setup
 
 ---
