@@ -1,6 +1,7 @@
 # Holesail-docker
 
 **Warning!** Some of these features are untested.
+- [ ] TODO: Make README more clear.
 
 Holesail-docker is a Docker container that proxies traffic from or to other containers.
 
