@@ -24,8 +24,6 @@ The following environment variables are available:
 
 ## Setup
 
----
-
 ### Create a Docker Network
 
 Create a Docker network to connect your containers:
@@ -49,8 +47,6 @@ docker run -d --name holesail \
 ```
 
 ## Modes
-
----
 
 Holesail-docker can run in three modes: Server, Client, and Filemanager.
 
@@ -142,8 +138,6 @@ services:
 Replace `<host dir>` with the directory you wish to share.
 
 ## Development
-
----
 
 To develop Holesail-docker, clone this repository, create docker-compose.yml and run:
 
