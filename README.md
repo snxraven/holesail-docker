@@ -16,9 +16,9 @@ Create a Docker network to connect your containers:
 docker network create holesail
 ```
 
-### Pull the Image
+### Use the Image
 
-Pull the latest Holesail-docker image:
+Use the latest Holesail-docker image:
 
 ```bash
 docker run -d --name holesail \
