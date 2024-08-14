@@ -50,6 +50,7 @@ services:
       MODE: server
       PORT: 25565
       HOST: minecraft
+      PUBLIC: false
       CONNECTOR: very-super-secret
     networks:
       - holesail
@@ -93,6 +94,7 @@ services:
       MODE: client
       PORT: 8989
       HOST: 0.0.0.0
+      PUBLIC: false
       CONNECTOR: very-super-secret
 ```
 
