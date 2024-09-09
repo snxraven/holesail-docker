@@ -42,6 +42,7 @@ docker run -d --name holesail \
   -e PORT=25565 \
   -e HOST=minecraft \
   -e CONNECTOR=very-super-secret \
+  -e PUBLIC=false \
   --network holesail \
   ghcr.io/anaxios/holesail-docker:latest
 ```
