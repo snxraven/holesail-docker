@@ -44,7 +44,7 @@ docker run -d --name holesail \
   -e CONNECTOR=very-super-secret \
   -e PUBLIC=false \
   --network holesail \
-  ghcr.io/anaxios/holesail-docker:latest
+  anaxios/holesail:latest
 ```
 
 ## Modes
@@ -60,7 +60,7 @@ services:
   holesail:
     container_name: holesail
     restart: unless-stopped
-    image: ghcr.io/anaxios/holesail-docker:latest
+    image: anaxios/holesail:latest
     environment:
       MODE: server
       PORT: 25565
@@ -102,7 +102,7 @@ services:
     container_name: holesail
     restart: unless-stopped
     network_mode: "host"
-    image: ghcr.io/anaxios/holesail-docker:latest
+    image: anaxios/holesail:latest
     environment:
       MODE: client
       PORT: 8989
@@ -122,7 +122,7 @@ services:
   holesail:
     container_name: holesail
     restart: unless-stopped
-    image: ghcr.io/anaxios/holesail-docker:latest
+    image: anaxios/holesail:latest
     environment:
       MODE: filemanager
       PORT: 8989
