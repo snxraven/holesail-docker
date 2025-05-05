@@ -4,7 +4,7 @@ WORKDIR /temp
 COPY run.sh .
 RUN chmod +x run.sh
 
-RUN npm install -g holesail@1.10.1
+RUN npm install -g holesail@2.0.3
 
 ENV MODE server
 ENV HOST 0.0.0.0
